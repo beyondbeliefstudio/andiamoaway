@@ -1,0 +1,10 @@
+[
+  {
+    "id": 1,
+    "name": "Liz Sousa",
+    "location": "Jupiter, Florida",
+    "description": "Kathy planned our dream honeymoon to Italy and it was absolutely flawless. Every detail was taken care of — we just showed up and had the time of our lives!",
+    "image": "@/assets/testimonial-woman.jpg",
+    "isFeatured": true
+  }
+]

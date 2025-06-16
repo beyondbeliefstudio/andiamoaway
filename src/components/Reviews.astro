@@ -1,0 +1,77 @@
+---
+import { getCollection } from "astro:content";
+import ReviewsCard from "./ReviewsCard.astro";
+
+const reviews = await getCollection("reviews", ({data}) => data.isFeatured);
+---
+
+<section class="reviews">
+    <div class="u-container reviews__container">
+        <div class="reviews__intro content-md">
+            <p class="eyebrow">Testimonials</p>
+            <h2 class="reviews__title"> Hear It From Fellow Travelers</h2>
+            <p class="reviews__text">
+                We promise to take care of your child’s social, emotional, intellectual and physical needs with
+                sensitive care and we also ensure you their security with our life.
+            </p>
+        </div>
+    <div class="reviews__layout">
+        {
+            reviews.map((reviews) => <ReviewsCard reviews={reviews}/>)
+        }
+    </div>
+    </div>
+</section>
+
+<style lang="scss">
+    /*-- -------------------------- -->
+<---            REVIEW             -->
+<--- -------------------------- -*/
+.reviews {
+    &__container {
+    }
+
+    &__intro {
+        text-align: center;
+        width: 100%;
+        max-width: 1010px;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: var(--_spacing---section-space--main);
+        opacity: 0;
+    }
+
+    &__layout {
+        display: grid;
+        flex-flow: column;
+        align-items: center;
+        grid-auto-flow: dense;
+        grid-auto-columns: minmax(0px, 1fr);
+        grid-template-columns: minmax(0px, 1fr) minmax(0px, 1fr);
+        grid-template-rows: auto;
+        row-gap: var(--_spacing---space--8);
+        column-gap: var(--_spacing---space--8);
+        background-color: var(--brand-primary-light);
+        border-radius: var(--border-radius);
+        padding: var(--_spacing---section-space--small);
+        scale: .8;
+
+        animation: fade-in linear forwards;
+        animation-timeline: view();
+        animation-range-start: 0px;
+        animation-range-end: 50vh;
+
+        @container (width < 64em) {
+            display: flex
+        }
+    }
+}
+
+.reviews.revealed {
+    .reviews__intro {
+        animation: reveal-up 1.5s ease-in-out .5s forwards;
+    }
+}
+</style>

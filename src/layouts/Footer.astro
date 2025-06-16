@@ -1,0 +1,77 @@
+<footer class="footer-001">
+    <div class="footer-001__container container">
+        <nav class="footer-001__nav">
+            <ul class="footer-001__list">
+                <li class="footer-001__item">
+                <a href="/index.html" class="footer-001__link" tabindex="2">Home</a>
+                </li>
+                <li class="footer-001__item">
+                <a href="/html/about.html" class="footer-001__link" tabindex="3">About</a>
+                </li>
+                <li class="footer-001__item">
+                <a href="/html/services.html" class="footer-001__link" tabindex="4">Services</a>
+                </li>
+                <li class="footer-001__item">
+                <a href="/html/contact.html" class="footer-001__link" tabindex="5">Contact</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="footer-001__wrapper">
+            <p class="footer-001__copyright">Copyright © 2020 | Garden State Web Designs | All Rights Reserved</p>
+        </div>
+    </div>
+</footer>
+
+
+<style lang="scss">
+.footer-001 {
+    background-color: var(--brand-secondary);
+    padding: 0rem;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0;
+        max-width: 100%;
+        padding: 0;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        padding: 1.5rem 0;
+    }
+
+    &__item {
+        padding: 0 0.5rem;
+    }
+
+    &__link {
+        color: var(--light-100);
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 1rem;
+        letter-spacing: 1px;
+    }
+
+    &__wrapper {
+        width: 100%;
+    }
+
+    &__copyright {
+        color: #fff;
+        margin-bottom: 0;
+        font-size: .9rem;
+        font-style: italic;
+        opacity: .8;
+        text-align: center;
+        border-top: 1px solid;
+        padding: .75rem 0;
+    }
+}
+</style>

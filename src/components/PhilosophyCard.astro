@@ -1,0 +1,42 @@
+---
+// Content
+import type { CollectionEntry } from "astro:content";
+
+type Props = {
+    philosophy: CollectionEntry<"philosophy">
+};
+
+const {philosophy} = Astro.props;
+
+const {title, description, icon } = philosophy.data;
+---
+
+<div class="philosophy-card">
+    <img src={icon.src} alt="">
+    <div class="philosophy-card__info">
+        <h3>{title}</h3>
+        <p>{description}</p>
+    </div>
+</div>
+
+<style lang="scss">
+.philosophy-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--_spacing---space--7);
+    align-items: center;
+    justify-content: center;
+    
+    img {
+        width: 50px;
+        margin: auto;
+    }
+    
+    &__info {
+        text-align: center;
+        padding-left: .5rem;
+        padding-right: .5rem;
+        height: 100%;
+    }
+}
+</style>

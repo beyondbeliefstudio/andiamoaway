@@ -1,0 +1,212 @@
+---
+import { Image } from 'astro:assets';
+import wordmark from '../assets/wordmark.svg';
+import Links from '@/components/Links.astro';
+---
+
+
+<!--=============== HEADER ===============-->
+<header class="nav">
+    <nav class="nav__container u-container">
+      <div class="nav__data">
+          <a href="/" class="nav__logo">
+            <Image src={wordmark} alt="andiamo away" />
+          </a>
+          
+          <div class="nav__toggle" id="nav-toggle">
+            <i class="ri-menu-line nav__burger"></i>
+            <i class="ri-close-line nav__close"></i>
+          </div>
+      </div>
+
+      <!--=============== NAV MENU ===============-->
+      <div class="nav__menu" id="nav-menu">
+          <ul class="nav__list">
+            <Links variant="nav-link" href="/about">About Me</Links>
+            <Links variant="nav-link" href="/specials">Specials</Links>
+            <Links variant="nav-link" href="/itinerary">Itineraries</Links>
+            <Links variant="nav-link" href="/contact">Contact</Links>
+          </ul>
+      </div>
+    </nav>
+</header>
+
+
+<style lang="scss">
+/*=============== HEADER ===============*/
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--light-200);
+  border-bottom: 1px solid var(--brand-secondary);
+  z-index: 999;
+
+  &__container {
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+  }
+  
+  &__logo, 
+  &__burger, 
+  &__close {
+    color: var(--brand-secondary);
+  }
+  
+  &__data {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  &__logo {
+    display: inline-flex;
+    align-items: center;
+    column-gap: .25rem;
+
+    img {
+      max-width: 300px;
+    }
+  }
+  
+  &__logo i {
+    font-weight: initial;
+    font-size: 1.25rem;
+  }
+  
+  &__toggle {
+    position: relative;
+    width: 40px;
+    height: 40px;
+  }
+  
+  &__burger, 
+  &__close {
+    position: absolute;
+    width: max-content;
+    height: max-content;
+    inset: 0;
+    margin: auto;
+    font-size: 2.5rem;
+    cursor: pointer;
+    transition: opacity .1s, transform .4s;
+  }
+  
+  &__close {
+    opacity: 0;
+  }
+}
+
+/* Navigation for mobile devices */
+@media screen and (max-width: 65rem) {
+.nav {
+  &__menu {
+    position: absolute;
+    left: calc(var(--site--margin) * -1);
+    height: calc(100vh - 92px);
+    top: 92px;
+    width: calc(100% + (var(--site--margin) * 2));
+    overflow: auto;
+    pointer-events: none;
+    opacity: 0;
+    transition: top .4s, opacity .3s;
+  }
+
+  &__menu::-webkit-scrollbar {
+    width: 0;
+  }
+
+  &__list {
+    background-color: var(--light-200);
+    padding-top: 1rem;
+    height: 100%;
+    padding-left: var(--_spacing---space--8);
+    padding-right: var(--_spacing---space--8);
+  }
+
+&__logo img {
+    max-width: 250px;
+  }
+}
+
+.nav-link {
+    padding: .5rem 0;
+}
+
+/* Show menu */
+.show-menu {
+  opacity: 1;
+  top: 92px;
+  pointer-events: initial;
+}
+
+/* Show icon */
+.show-icon .nav__burger {
+  opacity: 0;
+  transform: rotate(90deg);
+}
+.show-icon .nav__close {
+  opacity: 1;
+  transform: rotate(90deg);
+}
+}
+
+
+
+
+
+/*=============== BREAKPOINTS ===============*/
+/* For large devices */
+@media screen and (min-width: 65rem) {
+  .nav__container {
+    margin-inline: auto;
+    height: calc(var(--header-height) + 2rem);
+    display: flex;
+    justify-content: space-between;
+  }
+  .nav__toggle {
+    display: none;
+  }
+  .nav__list {
+    height: 100%;
+    display: flex;
+    column-gap: 3rem;
+  }
+  .nav__link {
+    height: 100%;
+    padding: 0;
+    justify-content: initial;
+    column-gap: .25rem;
+  }
+  .nav__link:hover {
+    background-color: transparent;
+  }
+}
+</style>
+
+
+<script>
+/*=============== SHOW MENU ===============*/
+const showMenu = (toggleId: string, navId: string): void => {
+    const toggle = document.getElementById(toggleId) as HTMLElement,
+          nav = document.getElementById(navId) as HTMLElement;
+
+    toggle.addEventListener('click', () => {
+        // Add show-menu class to nav menu
+        nav.classList.toggle('show-menu');
+
+        // Add show-icon to show and hide the menu icon
+        toggle.classList.toggle('show-icon');
+    });
+}
+
+showMenu('nav-toggle', 'nav-menu');
+
+const navigationHeight: number = (document.querySelector('.nav') as HTMLElement).offsetHeight;
+
+document.documentElement.style.setProperty('--scroll-padding', navigationHeight + "px");
+
+
+</script>

@@ -1,0 +1,41 @@
+---
+// Layout
+import ItineraryHero from "@/components/itinerary/ItineraryHero.astro";
+import Layout from "@/layouts/Layout.astro";
+
+// Types
+import type { GetStaticPaths } from "astro";
+
+// Helpers
+import { getCollection } from "astro:content";
+import { render } from "astro:content";
+
+export const getStaticPaths = (async() => {
+    const itinerary = await getCollection("itinerary");    
+    return itinerary.map((itinerary) => ({
+        params: {
+            page: itinerary.data.slug
+        },
+        props: {
+            itinerary,
+        }
+    }));
+}) satisfies GetStaticPaths;
+
+const { itinerary } = Astro.props;
+const {Content} = await render(itinerary);
+const { title, description, duration, heroImage, price, intro } = itinerary.data;
+---
+
+<Layout title={title} description={description}>
+    <ItineraryHero itinerary={itinerary} />
+    <section class="itinerary-post" aria-label="Itinerary Content">
+        <div class="u-container">
+            <div class="content-md itinerary-post__content">
+                <Content />
+            </div>
+        </div>
+    </section>
+</Layout>
+
+

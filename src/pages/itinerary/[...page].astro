@@ -1,0 +1,60 @@
+---
+import Hero from "@/components/hero/Hero.astro";
+import ItineraryCard from "@/components/itinerary/ItineraryCard.astro";
+import Pagination from "@/components/itinerary/Pagination.astro";
+
+import Layout from "@/layouts/Layout.astro";
+import type { GetStaticPaths } from "astro";
+import { getCollection } from "astro:content";
+export const getStaticPaths = (async ({paginate}) => {
+    const itinerary = await getCollection("itinerary");
+    return paginate(
+        itinerary,
+        {
+        pageSize: 4,
+        }
+    );
+}) satisfies GetStaticPaths;
+
+const { page } = Astro.props;
+---
+
+
+<Layout title=`Itineraries | Page ${page.currentPage}`>
+<section class="itinerary-overview__hero container">
+    <h1>A Few of My Favorite Adventures
+</h1>
+</section>
+<section class="itinerary">
+    <div class="itinerary__container container">
+        <div class="itinerary__card-group">
+            {page.data.map((itinerary) => <ItineraryCard itinerary={itinerary}/>)}
+        </div>
+        <Pagination prev={page.url.prev} next={page.url.next} />
+    </div>
+</section>
+</Layout>
+
+
+<style lang="scss">
+.itinerary {
+    position: relative;
+    z-index: 1;
+
+    &__container {
+        text-align: center;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    &__intro {
+        margin-bottom: 4rem;
+    }
+
+    &__card-group {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 1rem;
+    }
+}
+</style>

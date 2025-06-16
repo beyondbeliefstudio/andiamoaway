@@ -1,0 +1,75 @@
+---
+// Content
+import type { CollectionEntry } from "astro:content";
+
+// Components
+import Links from "@/components/Links.astro";
+
+type Props = {
+    special: CollectionEntry<"specials">
+};
+
+const {special} = Astro.props;
+
+const {title, description, image, href, featured, details, btn_text} = special.data;
+---
+
+<div class="specials-card">
+    <div class="specials-card__image-wrapper">
+        <img src={image.src} alt="cruise">
+    </div>
+    <div class="specials-card__info">
+        <div class="specials-card__content">
+            <h3>{title}</h3>
+            <p>{description}</p>
+            <h5>{details}</h5>
+        </div>
+        <Links href={href} variant="secondary">{btn_text}</Links>
+    </div>
+</div>
+
+<style lang="scss">
+.specials-card {
+    background-color: var(--light-100);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    display: grid;
+    grid-template-rows: auto 1fr;
+    gap: 1rem;
+    transition: .5s ease-in-out all;
+    border: 1px solid var(--brand-secondary);
+    box-shadow: -10px 10px var(--brand-secondary);
+
+    &:hover {
+        img {
+            scale: 1.05;
+        }
+    }
+    
+    &__image-wrapper{
+        overflow: hidden;
+        border-radius: 12px;
+        height: 100%;
+        width: 100%;
+        border: 1px solid var(--brand-secondary);
+        aspect-ratio: 4 / 3;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: .5s ease-in-out all;
+        }
+    }
+    
+    &__info {
+        text-align: left;
+        padding-left: .5rem;
+        padding-right: .5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+    }
+}
+</style>

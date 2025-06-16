@@ -1,0 +1,112 @@
+---
+import Links from "@/components/Links.astro";
+
+// Images
+import { Image } from "astro:assets";
+import heroImage from "@/assets/travel.jpg";
+
+---
+
+<section class="hero">
+    <div class="u-container hero__container">
+        <div class="content-md hero__content">
+            <h1>Let’s Plan Your Next Adventure</h1>
+            <h4>
+                Custom-curated travel design from someone who’s been around the world and back (several times). Let’s make your dream trip happen.
+            </h4>
+            <div class="btn__group">
+                <Links href={"/"}>Plan My Trip</Links>
+                <Links href={"/"} variant="outline">Explore Itineraries</Links>
+            </div>
+        </div>
+        <div class="hero__img-wrapper">
+            <Image src={heroImage} alt="travel photo" class="hero__img" />
+        </div>
+    </div>
+</section>
+
+
+
+
+<style lang="scss" is:global>
+.hero {
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 50vh;
+        background-image: url("/src/assets/hero-dash-left.svg"), url("/src/assets/hero-dash-right.svg");
+        background-repeat: no-repeat;
+        background-size: clamp(min(33rem), 50vw, max(52rem));
+        background-position: top left -14vw, top right -14vw;
+        opacity: .5;
+        z-index: -999;
+        pointer-events: none;
+    }
+
+    @media (width < 56em) {
+        &::before {
+            background-position: top left -40vw, top right -40vw;
+        }
+    }
+
+    &__container {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        row-gap: var(--_spacing---section-space--main);
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: var(--_spacing---space--5);
+        opacity: 0;
+        animation: reveal-up 1.5s ease-in-out .5s forwards;
+    }
+
+    &__img-wrapper {
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        position: relative;
+        scale: .8;
+        
+        animation: fade-in linear forwards;
+        animation-timeline: view();
+        animation-range-start: 500px;
+        animation-range-end: 900px;
+
+        &:after {
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            left: 0;
+            bottom: 0;
+            background-color: var(--light-200);
+            z-index: 10;
+            animation: img-reveal 1.5s ease-in-out 1s forwards;
+        }
+    }
+
+    &__img {
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        min-height: 500px;
+    }
+}
+</style>
+
+
+<script>
+  import { gsap } from "gsap";
+  console.log("using GSAP: ", gsap.version);
+</script>

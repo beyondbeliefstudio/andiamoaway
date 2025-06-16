@@ -1,0 +1,28 @@
+---
+import Links from '../Links.astro';
+
+
+type Props = {
+    prev?: string;
+    next?: string;
+}
+
+const { prev, next } = Astro.props;
+---
+
+<div class="pagination">
+{prev && (
+    <Links class="btn btn-primary" href={prev}>Previous</Links>
+)}
+
+{next && (
+    <Links variant="secondary" href={next}>Next</Links>
+)}
+</div>
+
+
+<style>
+    .pagination {
+        margin-top: 3rem;
+    }
+</style>

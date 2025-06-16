@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "title": "Personalized Over Packaged",
+    "description": "Your travel style is as unique as your fingerprint — so why settle for cookie-cutter itineraries? I take time to get to know you, your goals, your non-negotiables, and your travel vibe.",
+    "icon": "@/assets/airplane.svg"
+  },
+{
+    "id": 2,
+    "title": "Local, Immersive, Authentic",
+    "description": "To me, the best moments of travel happen when you go just a little deeper. That’s why I prioritize authentic, local experiences — the tiny wine bar your guidebook skipped, the cooking class in someone’s home, the sunset hike no one’s posted on Instagram.",
+    "icon": "@/assets/globe.svg"
+  },
+{
+    "id": 3,
+    "title": "Travel Should Feel Effortless",
+    "description": "Let’s face it — planning travel can be overwhelming. That’s where I come in. From flights and ferry rides to museum tickets and dinner reservations, I handle every detail so you don’t have to. ",
+    "icon": "@/assets/beach.svg"
+  }
+]

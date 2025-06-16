@@ -1,49 +1,129 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+// Layouts
+import Layout from '@/layouts/Layout.astro';
+
+// COMPONENTS
+import Hero from '@/components/hero/Hero.astro';
+import Links from "@/components/Links.astro";
+import Specials from '@/components/Specials.astro';
+import Itinerary from '@/home/Itinerary.astro';
+
+// Images
+import { Image } from "astro:assets";
+import kathy from "@/assets/kathy.jpeg";
+import family from "@/assets/family.jpeg";
+import testimonial from "@/assets/testimonial.jpeg";
+import FullOverlay from '@/components/FullOverlay.astro';
+import Reviews from '@/components/Reviews.astro';
+import travelVan from '@/assets/travel-van.jpg';
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to
-				<a href="https://docs.astro.build/">read the docs</a>
-				or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out
-				<a href="https://github.com/Charca/astro-blog-template">astro-blog-template</a>
-				by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
-	</body>
-</html>
+
+<Layout title="Home">
+
+<!-- Hero -->
+<Hero />
+
+<!-- Split Overlay -->
+<section class="split reversed">
+    <div class="split__container u-container">
+        <div class="split__layout">
+            <div class="split__col">
+                <div class="split__img-wrapper">
+                    <img src={kathy.src} alt="kathy">
+                </div>
+            </div>
+            <div class="split__col">
+                <div class="split__content">
+                    <p class="eyebrow">Meet Your Travel Designer</p>
+                    <h2 class="split__heading">Hi! I'm Kathy Nervegna</h2>
+                    <p> Hi! I’m Kathy Nervegna—lifelong explorer, detail-obsessed planner, and founder of Andiamo Away.</p>
+<p>Travel has been my passion ever since I can remember. From the canals of Venice to the markets of Marrakech, I’ve been lucky enough to experience the world in all its colors, flavors, and stories.
+Now? I want to share that joy with you.</p>
+<p>
+Whether it’s a honeymoon in Santorini, a mother-daughter escape to Paris, or a bucket-list adventure through Southeast Asia, I design journeys with heart, meaning, and magic. If you're ready to stop scrolling and start exploring—I'm your girl.</p>
+
+                        <Links variant="secondary">About Me</Links>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Specials -->
+<Specials />
+
+<!-- Split Overlay -->
+<section class="split">
+    <div class="split__container u-container">
+        <div class="split__layout">
+            <div class="split__col">
+                <div class="split__content">
+                    <p class="eyebrow">Why Travel Matters</p>
+                    <h2 class="split__heading">life’s too short to stay in one place.</h2>
+                    <p> Travel opens your heart, shifts your perspective, and leaves you with stories that last a lifetime. It’s not just about checking places off a list — it’s about discovering the world and yourself along the way. The memories you make while traveling are the ones you’ll tell over and over again.</p>
+                </div>
+            </div>
+            <div class="split__col">
+                <div class="split__img-wrapper">
+                    <img src={family.src} alt="family">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+       
+<!-- Full Overlay -->
+<FullOverlay     
+    desktopImgUrl={travelVan}
+    alt="user profile picture" 
+/>
+
+
+
+<!-- Itineraries -->
+<Itinerary />
+
+
+<!-- Reviews -->
+<Reviews />
+
+</Layout>
+
+
+<style lang="scss">
+.hero {
+    + .split {
+        background-color: red;
+        
+        &__container {
+            padding-top: 0 !important;
+        }
+    }
+}
+</style>
+
+<script>
+const inViewport = (elem: string): void => {
+    const allElements: HTMLCollectionOf<Element> = document.getElementsByTagName(elem);
+    const windowHeight: number = window.innerHeight;
+
+    const elems = (): void => {
+        for (let i = 0; i < allElements.length; i++) {  //  loop through the sections
+            const viewportOffset: DOMRect = allElements[i].getBoundingClientRect();  //  returns the size of an element and its position relative to the viewport
+            const top: number = viewportOffset.top;  //  get the offset top
+            if (top < windowHeight) {  //  if the top offset is less than the window height
+                (allElements[i] as HTMLElement).classList.add('revealed');  //  add the class
+            } else {
+                (allElements[i] as HTMLElement).classList.remove('revealed');  //  remove the class
+            }
+        }
+    }
+
+    elems();
+    window.addEventListener('scroll', elems);
+}
+
+inViewport('section');  //  run the function on all section elements
+
+</script>

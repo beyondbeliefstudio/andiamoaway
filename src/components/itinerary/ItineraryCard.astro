@@ -1,0 +1,88 @@
+---
+// Content
+import type { CollectionEntry } from "astro:content";
+
+// Components
+import Links from "@/components/Links.astro";
+
+type Props = {
+    itinerary: CollectionEntry<"itinerary">
+};
+
+const {itinerary} = Astro.props;
+
+const {title, description, duration, heroImage, price, slug, isFeatured} = itinerary.data;
+---
+
+<div class="itinerary-card">
+    <div class="itinerary-card__image-wrapper">
+        <img src={heroImage.src} alt="amalfi">
+    </div>
+    <div class="itinerary-card__info">
+        <div class="itinerary-card__content">
+            <h3>{title}</h3>
+            <p>{description}</p>
+            <div class="itinerary-card__details">
+                <h5>Duration: {duration}</h5>
+                <h5>Starting at ${price}</h5>
+            </div>
+        </div>
+        <Links variant="secondary" href={`/itinerary/${slug}`}>Learn More</Links>
+    </div>
+</div>
+
+<style lang="scss">
+.itinerary-card {
+    background-color: var(--light-100);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    display: grid;
+    grid-template-rows: auto 1fr;
+    gap: 1rem;
+    border: 1px solid var(--brand-secondary);
+    box-shadow: -10px 10px var(--brand-secondary);
+    min-height: 400px;
+
+    @media screen and (max-width: 768px) {
+        grid-template-columns: 1fr;
+    }
+    
+    &__image-wrapper{
+        overflow: hidden;
+        border-radius: 12px;
+        height: 100%;
+        width: 100%;
+        border: 1px solid var(--brand-secondary);
+        aspect-ratio: 4 / 3;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: .5s ease-in-out all;
+        }
+    }
+    
+    &__info {
+        text-align: left;
+        padding-left: .5rem;
+        padding-right: .5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+    }
+    
+    &__details {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        border-top: 1px solid var(--brand-secondary);
+        padding-top: 1rem;
+        gap: 1rem;
+    }
+}
+
+
+</style>

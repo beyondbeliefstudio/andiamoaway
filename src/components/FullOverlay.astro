@@ -1,0 +1,46 @@
+---
+import type { ImageMetadata } from "astro";
+import { getImage } from "astro:assets";
+
+interface Props {
+    desktopImgUrl: string | ImageMetadata;
+    alt: string;
+    class?: string;
+}
+
+const { class: className, desktopImgUrl, alt, ...rest } = Astro.props;
+
+
+const desktopImg = await getImage({
+    src: desktopImgUrl,
+});
+---
+
+<section class={className} {...rest}>
+    <div class="u-container overlay__container">
+        <img src={desktopImg.src} alt={alt} />
+    </div>
+</section>
+
+<style lang="scss">
+.overlay {
+    scale: .8;
+
+    animation: fade-in linear forwards;
+    animation-timeline: view();
+    animation-range-start: 0px;
+    animation-range-end: 50vh;
+    
+    &__container {
+        position: relative;
+        
+        img {
+            height: 75vh;
+            width: 100%;
+            object-fit: cover;
+            border-radius: var(--border-radius);
+            border: 1px solid var(--brand-secondary);
+        }
+    }
+}
+</style>

@@ -1,0 +1,46 @@
+---
+// Content
+import type { CollectionEntry } from "astro:content";
+
+// Components
+
+type Props = {
+    reviews: CollectionEntry<"reviews">
+};
+
+const {reviews} = Astro.props;
+
+const {description, isFeatured, image, location, name} = reviews.data;
+---
+
+<div class="reviews__img-wrapper">
+    <img src={image.src} >
+</div>
+<div class="reviews__flex">
+    <h3 class="reviews__quote">
+        {description}
+    </h3>
+    <div class="reviews__contact-info">
+        <h5 class="reviews__name">{name}</h5>
+        <h5>—</h5>
+        <h5 class="reviews__location">{location}</h5>
+    </div>
+</div>
+
+<style lang="scss">
+.reviews {
+    &__img-wrapper {
+        img {
+            border-radius: var(--border-radius);
+            background-size: cover;
+        }
+    }
+
+    &__contact-info {
+        display: flex;
+        gap: 1rem;
+        text-transform: uppercase;
+        color: var(--dark-800);
+    }
+}
+</style>

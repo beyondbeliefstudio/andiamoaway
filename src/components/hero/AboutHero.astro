@@ -1,0 +1,74 @@
+---
+// Components
+import Links from "../Links.astro";
+
+// Images
+import { Image } from "astro:assets";
+import heroImage from "@/assets/kathy-about.jpeg";
+import heroImage2 from "@/assets/kathy-about-2.jpeg";
+
+
+---
+
+<section class="hero">
+    <div class="u-container hero__container">
+        <div class="hero__layout">
+            <div class="column">
+                <div class="contents">
+                    <h1>Meet Kathy, the Travel Queen.</h1>
+                    <p>Lifelong traveler, detail-obsessed planner, and your go-to guide for bucket-list adventures.</p>
+                </div>
+                <div class="button-group">
+                    <Links href="/">Get In Touch</Links>
+                    <Links variant="outline" href="/">Learn More</Links>
+                </div>
+            </div>
+            <div class="hero__img-wrapper">
+                <img class="hero__img" src={heroImage.src} alt="Kathy Nervegna">
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<style lang="scss">
+.hero {
+    &__container {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        padding-top: var(--_spacing---section-space--main);
+        padding-bottom: var(--_spacing---section-space--main);
+    }
+
+    &__layout {
+        display: grid;
+        flex-flow: column;
+        align-items: center;
+        grid-auto-flow: dense;
+        grid-auto-columns: minmax(0px, 1fr);
+        grid-template-columns: minmax(0px, 1fr) minmax(0px, 1fr);
+        grid-template-rows: auto;
+        row-gap: var(--_spacing---space--8);
+        column-gap: var(--_spacing---space--8);
+
+        @container (width < 64em) {
+            display: flex
+        }
+    }
+
+    &__img-wrapper {
+        height: 700px;
+        overflow: hidden;
+    }
+
+    &__img {
+        border-radius: var(--border-radius);
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+</style>

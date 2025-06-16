@@ -1,0 +1,41 @@
+---
+import ItineraryCard from "@/components/itinerary/ItineraryCard.astro";
+import { getCollection } from "astro:content";
+
+const itinerary = await getCollection("itinerary", ({data}) => data.isFeatured);
+
+
+---
+
+<section class="itinerary">
+    <div class="itinerary__container u-container">
+        <div class="itinerary__intro content-md">
+            <p class="eyebrow">Travel Inspo</p>
+            <h2> A Few of My Favorite Adventures</h2>
+            <p>Intro Line: Need inspiration? Here are just a few custom itineraries I’ve crafted (and personally tested!).</p>
+        </div>
+        <div class="itinerary__card-group">
+                {
+                    itinerary.map((itinerary) => <ItineraryCard itinerary={itinerary}/>)
+                }
+        </div>
+    </div>
+</section>
+
+<style lang="scss">
+.itinerary {
+    position: relative;
+    z-index: 1;
+    background: var(--brand-primary);
+
+    &__intro {
+        margin-bottom: var(--_spacing---section-space--main);
+    }
+
+    &__card-group {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(35rem, 100%), 1fr));
+        grid-gap: var(--_spacing---section-space--small);
+    }
+}
+</style>

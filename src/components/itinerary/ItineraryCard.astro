@@ -4,6 +4,7 @@ import type { CollectionEntry } from "astro:content";
 
 // Components
 import Links from "@/components/Links.astro";
+import { Image } from "astro:assets";
 
 type Props = {
     itinerary: CollectionEntry<"itinerary">
@@ -16,7 +17,7 @@ const {title, description, duration, heroImage, price, slug, isFeatured} = itine
 
 <div class="itinerary-card">
     <div class="itinerary-card__image-wrapper">
-        <img src={heroImage.src} alt="amalfi">
+        <Image src={heroImage} alt="amalfi">
     </div>
     <div class="itinerary-card__info">
         <div class="itinerary-card__content">

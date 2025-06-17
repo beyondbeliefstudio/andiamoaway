@@ -30,7 +30,7 @@ import travelVan from '@/assets/travel-van.jpg';
         <div class="split__layout">
             <div class="split__col">
                 <div class="split__img-wrapper">
-                    <img src={kathy.src} alt="kathy">
+                    <Image src={kathy} alt="kathy">
                 </div>
             </div>
             <div class="split__col">
@@ -66,7 +66,7 @@ Whether it’s a honeymoon in Santorini, a mother-daughter escape to Paris, or a
             </div>
             <div class="split__col">
                 <div class="split__img-wrapper">
-                    <img src={family.src} alt="family">
+                    <Image src={family} alt="family">
                 </div>
             </div>
         </div>
@@ -90,40 +90,3 @@ Whether it’s a honeymoon in Santorini, a mother-daughter escape to Paris, or a
 
 </Layout>
 
-
-<style lang="scss">
-.hero {
-    + .split {
-        background-color: red;
-        
-        &__container {
-            padding-top: 0 !important;
-        }
-    }
-}
-</style>
-<!-- 
-<script>
-const inViewport = (elem: string): void => {
-    const allElements: HTMLCollectionOf<Element> = document.getElementsByTagName(elem);
-    const windowHeight: number = window.innerHeight;
-
-    const elems = (): void => {
-        for (let i = 0; i < allElements.length; i++) {  //  loop through the sections
-            const viewportOffset: DOMRect = allElements[i].getBoundingClientRect();  //  returns the size of an element and its position relative to the viewport
-            const top: number = viewportOffset.top;  //  get the offset top
-            if (top < windowHeight) {  //  if the top offset is less than the window height
-                (allElements[i] as HTMLElement).classList.add('revealed');  //  add the class
-            } else {
-                (allElements[i] as HTMLElement).classList.remove('revealed');  //  remove the class
-            }
-        }
-    }
-
-    elems();
-    window.addEventListener('scroll', elems);
-}
-
-inViewport('section');  //  run the function on all section elements
-
-</script> -->

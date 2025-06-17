@@ -3,6 +3,7 @@
 import type { CollectionEntry } from "astro:content";
 
 // Components
+import { Image } from "astro:assets";
 import Links from "@/components/Links.astro";
 
 type Props = {
@@ -16,7 +17,7 @@ const {title, description, image, href, featured, details, btn_text} = special.d
 
 <div class="specials-card">
     <div class="specials-card__image-wrapper">
-        <img src={image.src} alt="cruise">
+        <Image src={image} alt="cruise">
     </div>
     <div class="specials-card__info">
         <div class="specials-card__content">

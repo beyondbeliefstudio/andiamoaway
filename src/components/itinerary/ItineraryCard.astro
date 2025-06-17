@@ -25,8 +25,8 @@ const {title, description, duration, heroImage, price, slug, isFeatured} = itine
             <h3>{title}</h3>
             <p>{description}</p>
             <div class="itinerary-card__details">
-                <h5>Duration: {duration}</h5>
-                <h5>Starting at ${price}</h5>
+                <p class="large">Duration: {duration}</p>
+                <p class="large">Starting at ${price}</p>
             </div>
         </div>
         <Links variant="secondary" href={`/itinerary/${slug}`}>Learn More</Links>

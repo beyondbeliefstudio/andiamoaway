@@ -17,6 +17,8 @@ This itinerary is designed to guide you through Peru in a way that lets you abso
 
 Wander through Andean pulses, Incan echoes, and sunrise revelations.
 
+![](/src/assets/lima.jpg)
+
 ## Day 1–2: Lima’s Coastal Flavor
 
 Arrive in Peru’s coastal capital and immerse yourself in its rich culinary culture. Stay in the seaside district of Miraflores, where you can stroll the clifftop parks or watch surfers dotting the Pacific. Grab your first Pisco Sour and enjoy ocean-to-table ceviche as the sun sets.

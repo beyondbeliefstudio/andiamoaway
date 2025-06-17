@@ -1,14 +1,14 @@
 ---
-title: 'Peru & The Sacred Valley: 8 Days of Culture, Cuisine, and Inca Wonders'
-slug: 'peru-and-the-sacred-valley'
-description: '8 days of culture, cuisine, and Machu Picchu magic.'
-intro: "This is more than Machu Picchu — it's a soul-stirring journey through Peru’s vibrant history, breathtaking landscapes, and unforgettable food."
-duration: '8 days'
-price: '1,200'
-heroImage: ../../assets/peru.jpg
+title: "Peru & The Sacred Valley: 8 Days of Culture, Cuisine, and Inca Wonders"
+slug: peru-and-the-sacred-valley
+description: 8 days of culture, cuisine, and Machu Picchu magic.
+intro: This is more than Machu Picchu — it's a soul-stirring journey through
+  Peru’s vibrant history, breathtaking landscapes, and unforgettable food.
+duration: 8 days
+price: 1,200
 isFeatured: true
+heroImage: ../../assets/peru.jpg
 ---
-
 ## Intro
 
 Peru is one of those places that gets under your skin in the best way possible. The landscapes are majestic, yes — but it’s the people, the food, the music, and the spiritual hum in the air that made my trip unforgettable. Watching the sun rise over Machu Picchu was a moment I’ll never forget, but so was sipping coca tea in a local market and laughing with a weaver in a quiet Andean village.
@@ -16,6 +16,8 @@ Peru is one of those places that gets under your skin in the best way possible. 
 This itinerary is designed to guide you through Peru in a way that lets you absorb its layers. From Lima's flavorful food scene to the Sacred Valley’s quiet, powerful energy, every stop offers something memorable. It’s a trip for curious souls who want culture, history, and awe-inspiring beauty all in one.
 
 Wander through Andean pulses, Incan echoes, and sunrise revelations.
+
+![](media/lima.jpg)
 
 ## Day 1–2: Lima’s Coastal Flavor
 
@@ -57,7 +59,7 @@ In the evening, dine with a view, take in a folklore show, or simply enjoy the g
 
 Take in one last panoramic view of Cusco before your airport transfer. Whether you're heading home or onto your next destination, the flavors, faces, and sacred spirit of Peru will remain.
 
----
+* * *
 
 **This trip can be adapted with hiking, luxury trains, or cultural deep dives.**  
 [📬 Let’s Design It Together](#)

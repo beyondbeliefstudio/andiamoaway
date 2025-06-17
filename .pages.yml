@@ -1,1 +1,3 @@
-media: files
+media:
+  input: src/assets
+  output: media

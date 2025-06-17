@@ -5,7 +5,7 @@ description: '10 days of neon lights, bamboo forests, and unforgettable ramen.'
 intro: "From high-speed trains and hidden temples to Michelin ramen and bamboo forests — this trip blends modern thrills with timeless tradition."
 duration: '10 days'
 price: '2,500'
-heroImage: ./images/tokyo.jpg
+heroImage: ../../assets/tokyo.jpg
 isFeatured: true
 ---
 

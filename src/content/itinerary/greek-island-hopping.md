@@ -5,7 +5,7 @@ description: 'A sun-soaked escape through Mykonos, Naxos, and Santorini.'
 intro: "Sunsets, whitewashed villages, and dreamy Aegean breezes — this trip is a love letter to island life, perfectly paced and stress-free."
 duration: '5 days'
 price: '1,200'
-heroImage: ./images/santorini.jpg
+heroImage: ../../assets/santorini.jpg
 isFeatured: true
 ---
 

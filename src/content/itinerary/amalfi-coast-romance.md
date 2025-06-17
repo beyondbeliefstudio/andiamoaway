@@ -5,7 +5,7 @@ description: 'From clifftop sunsets in Positano to candlelit dinners in Ravello 
 intro: "Whether you're honeymooning, celebrating an anniversary, or just in need of an unapologetically beautiful escape, the Amalfi Coast delivers pure magic at every turn. This 7-day custom-curated itinerary blends sunshine, spritzes, and unforgettable coastal charm."
 duration: '5 days'
 price: '2,500'
-heroImage: ./images/amalfi.jpg
+heroImage: ../../assets/amalfi.jpg
 isFeatured: true
 ---
 

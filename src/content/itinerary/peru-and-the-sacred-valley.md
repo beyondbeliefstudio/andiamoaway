@@ -5,7 +5,7 @@ description: '8 days of culture, cuisine, and Machu Picchu magic.'
 intro: "This is more than Machu Picchu — it's a soul-stirring journey through Peru’s vibrant history, breathtaking landscapes, and unforgettable food."
 duration: '8 days'
 price: '1,200'
-heroImage: ./images/peru.jpg
+heroImage: ../../assets/peru.jpg
 isFeatured: true
 ---
 

@@ -65,7 +65,8 @@ main {
 
 /* Typography */
 h1 {
-    font-size: var(--_typography---font-size--h1);
+    // font-size: var(--_typography---font-size--h1);
+    font-size: 5rem;
     line-height: 1.1;
     font-family: var(--primary-family);
     font-weight: 400;

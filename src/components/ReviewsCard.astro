@@ -31,9 +31,28 @@ const {description, isFeatured, image, imageAlt, location, name} = reviews.data;
 <style lang="scss">
 .reviews {
     &__img-wrapper {
+        height: 100%;
+        width: 100%;
+        position: relative;
+        border-radius: 15px;
+        overflow: hidden;
+        border: 1px solid var(--brand-secondary);
+
+        &:hover {
+            img {
+                scale: 1.05;
+            }
+        }
+
         img {
             border-radius: var(--border-radius);
             background-size: cover;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            position: relative;
+            z-index: 2;
+            transition: .5s ease-in-out all;
         }
     }
 

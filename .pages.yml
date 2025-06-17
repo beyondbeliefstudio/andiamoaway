@@ -9,11 +9,11 @@ content:
   type: collection
   fields:
     - {name: title, label: Title, type: string}
+    - {name: slug, label: Slug, type: string}
     - {name: description, label: Description, type: string}
     - {name: intro, label: Intro, type: string}
     - {name: duration, label: Duration, type: string}
     - {name: price, label: Price, type: string}
-    - {name: slug, label: Slug, type: string}
     - {name: isFeatured, label: Featured, type: boolean, default: true}
     - {name: heroImage, label: Hero Image, type: image}
     - {name: body, label: Body, type: rich-text}

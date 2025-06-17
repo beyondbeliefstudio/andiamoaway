@@ -38,6 +38,7 @@ const reviews = defineCollection({
 		description: z.string(),
 		isFeatured: z.boolean(),
         image: image(),
+		imageAlt: z.string(),
     }),
 });
 

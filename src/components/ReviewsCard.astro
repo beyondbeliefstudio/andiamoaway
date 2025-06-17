@@ -10,11 +10,11 @@ type Props = {
 
 const {reviews} = Astro.props;
 
-const {description, isFeatured, image, location, name} = reviews.data;
+const {description, isFeatured, image, imageAlt, location, name} = reviews.data;
 ---
 
 <div class="reviews__img-wrapper">
-    <img src={image.src} >
+    <img src={image.src} alt={imageAlt}>
 </div>
 <div class="reviews__flex">
     <h3 class="reviews__quote">

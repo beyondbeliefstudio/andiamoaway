@@ -1,6 +1,6 @@
 media:
   input: src/assets
-  output: media
+  output: src/assets
 
 content:
 - name: itinerary

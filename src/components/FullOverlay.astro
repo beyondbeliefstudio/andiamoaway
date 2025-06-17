@@ -16,7 +16,7 @@ const desktopImg = await getImage({
 });
 ---
 
-<section class={className} {...rest}>
+<section class:list={["overlay", className]} {...rest}>
     <div class="u-container overlay__container">
         <img src={desktopImg.src} alt={alt} />
     </div>
@@ -41,7 +41,14 @@ const desktopImg = await getImage({
             object-fit: cover;
             border-radius: var(--border-radius);
             border: 1px solid var(--brand-secondary);
+            clip-path: inset(0% 0% 100% 00%);
         }
+    }
+}
+
+.overlay.revealed {
+    img {
+        animation: img-reveal 1s ease-in-out 1s forwards;
     }
 }
 </style>

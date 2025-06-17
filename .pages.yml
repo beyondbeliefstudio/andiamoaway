@@ -5,7 +5,7 @@ media:
 content:
 - name: itinerary
 label: itinerary
-path: src/content
+path: src/content/itinerary
 type: collection
 fields:
 - {name: title, label: Title, type: string}

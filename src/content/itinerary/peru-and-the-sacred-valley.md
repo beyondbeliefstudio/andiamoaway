@@ -58,8 +58,3 @@ In the evening, dine with a view, take in a folklore show, or simply enjoy the g
 ## Day 8: Farewell to Peru
 
 Take in one last panoramic view of Cusco before your airport transfer. Whether you're heading home or onto your next destination, the flavors, faces, and sacred spirit of Peru will remain.
-
-* * *
-
-**This trip can be adapted with hiking, luxury trains, or cultural deep dives.**  
-[📬 Let’s Design It Together](#)

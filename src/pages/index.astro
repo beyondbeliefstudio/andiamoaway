@@ -9,7 +9,7 @@ import Specials from '@/components/Specials.astro';
 import Itinerary from '@/home/Itinerary.astro';
 
 // Images
-import { Image } from "astro:assets";
+import { Image, Picture } from "astro:assets";
 import kathy from "@/assets/kathy.jpeg";
 import family from "@/assets/family.jpeg";
 import testimonial from "@/assets/testimonial.jpeg";
@@ -30,7 +30,7 @@ import travelVan from '@/assets/travel-van.jpg';
         <div class="split__layout">
             <div class="split__col">
                 <div class="split__img-wrapper">
-                    <Image src={kathy} alt="kathy">
+                    <Picture src={kathy} alt="kathy" width={1000} height={1000}>
                 </div>
             </div>
             <div class="split__col">
@@ -66,7 +66,7 @@ Whether it’s a honeymoon in Santorini, a mother-daughter escape to Paris, or a
             </div>
             <div class="split__col">
                 <div class="split__img-wrapper">
-                    <Image src={family} alt="family">
+                    <Picture src={family} alt="family" width={1000} height={1000}>
                 </div>
             </div>
         </div>

@@ -2,7 +2,7 @@
 import Links from "@/components/Links.astro";
 
 // Images
-import { Image } from "astro:assets";
+import { Picture } from "astro:assets";
 import heroImage from "@/assets/travel.jpg";
 
 ---
@@ -20,7 +20,7 @@ import heroImage from "@/assets/travel.jpg";
             </div>
         </div>
         <div class="hero__img-wrapper">
-            <Image src={heroImage} alt="travel photo" class="hero__img" />
+            <Picture src={heroImage} alt="travel photo" class="hero__img" loading="eager" width={1500} height={1000} />
         </div>
     </div>
 </section>

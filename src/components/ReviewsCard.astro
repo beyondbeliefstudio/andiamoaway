@@ -2,6 +2,7 @@
 // Content
 import type { CollectionEntry } from "astro:content";
 import { Image } from "astro:assets";
+import { Picture } from "astro:assets";
 
 // Components
 
@@ -15,7 +16,7 @@ const {description, isFeatured, image, imageAlt, location, name} = reviews.data;
 ---
 
 <div class="reviews__img-wrapper">
-    <Image src={image} alt={imageAlt}>
+    <Picture src={image} alt={imageAlt} width={1000} height={1000}>
 </div>
 <div class="reviews__flex">
     <h3 class="reviews__quote">
@@ -45,7 +46,6 @@ const {description, isFeatured, image, imageAlt, location, name} = reviews.data;
         }
 
         img {
-            border-radius: var(--border-radius);
             background-size: cover;
             height: 100%;
             width: 100%;

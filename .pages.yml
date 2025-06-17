@@ -3,7 +3,7 @@ media:
   output: media
 
 content:
-name: itinerary
+- name: itinerary
 label: itinerary
 path: src/content
 type: collection

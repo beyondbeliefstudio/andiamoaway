@@ -3,7 +3,7 @@ title: 'Tuscany Wine Escape – Save $500 Per Couple'
 slug: 'tuscany-wine-escape'
 description: 'Rolling vineyards, rustic villas, and endless Chianti. Book a custom 7-day trip through Tuscany and save $500 per couple on travel before October.'
 details: 'Perfect for anniversaries, honeymoons, or “just because” escapes.'
-image: "@/assets/tuscany.jpg"
+image: "../../assets/tuscany.jpg"
 isFeatured: true
 btn_text: 'Learn More'
 ---

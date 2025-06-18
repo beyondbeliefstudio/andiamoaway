@@ -3,7 +3,7 @@ title: 'Royal Caribbean – Kids Sail Free + Unlimited Drinks'
 slug: 'rc-kids-sail-free-unlimited-drinks'
 description: 'Set sail in style: Book a Royal Caribbean cruise this month and get kids sail free plus unlimited alcohol packages for adults on select sailings.'
 details: 'Booking deadline: June 30'
-image: "@/assets/cruise.jpg"
+image: "../../assets/cruise.jpg"
 isFeatured: true
 btn_text: 'Learn More'
 ---

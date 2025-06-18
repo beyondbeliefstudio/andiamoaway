@@ -3,7 +3,7 @@ title: 'All-Inclusive Mexico – 4th Night Free'
 slug: 'all-inclusive-mexico'
 description: "Book 3 nights at select all-inclusive resorts in Mexico and get the 4th night free + VIP arrival service. Beaches, margaritas, and no extra cost? That's a win."
 details: 'Travel valid through December 2025'
-image: "@/assets/mexico.jpg"
+image: "../../assets/mexico.jpg"
 isFeatured: true
 btn_text: 'Learn More'
 ---

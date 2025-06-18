@@ -1,0 +1,40 @@
+---
+import Pagination from "@/components/itinerary/Pagination.astro";
+import SpecialCard from "@/components/SpecialCard.astro";
+import Layout from "@/layouts/Layout.astro";
+
+import type { GetStaticPaths } from "astro";
+import { getCollection } from "astro:content";
+export const getStaticPaths = (async ({paginate}) => {
+    const specials = await getCollection("specials");
+    return paginate(
+        specials,
+        {
+        pageSize: 4,
+        }
+    );
+}) satisfies GetStaticPaths;
+
+const { page } = Astro.props;
+
+
+---
+
+<Layout title=`Specials | Page ${page.currentPage}`>
+<section class="itinerary-overview__hero">
+    <div class="u-container">
+        <div class="content-md">
+            <h1>A Few of My Favorite Adventures</h1>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat doloribus voluptatibus reprehenderit earum expedita totam aliquam pariatur fugit incidunt quasi? Eaque iusto dolorum at, corporis itaque rerum aliquid velit atque!</p>
+        </div>
+    </div>
+</section>
+<section class="itinerary">
+    <div class="itinerary__container u-container">
+        <div class="itinerary__card-group">
+            {page.data.map((special) => <SpecialCard special={special}/>)}
+        </div>
+        <Pagination prev={page.url.prev} next={page.url.next} />
+    </div>
+</section>
+</Layout>

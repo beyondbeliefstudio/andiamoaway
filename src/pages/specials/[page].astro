@@ -1,0 +1,35 @@
+---
+import Layout from "@/layouts/Layout.astro";
+
+//Types
+import type { GetStaticPaths } from "astro";
+
+// Helpers
+import { getCollection } from "astro:content";
+import { render } from "astro:content";
+
+export const getStaticPaths = (async() => {
+    const specials = await getCollection("specials");
+    return specials.map((specials) => ({
+        params: {
+            page: specials.data.slug
+        },
+        props: {
+            specials,
+        }
+    }));
+}) satisfies GetStaticPaths;
+const {specials} = Astro.props;
+const {Content} = await render(specials);
+const {title, slug, isFeatured, image, btn_text, description, details} = specials.data;
+---
+
+<Layout title={title} description={description}>
+    <section class="itinerary-post" aria-label="Specials Content">
+        <div class="u-container itinerary-post__container">
+            <div class="content-md itinerary-post__content">
+                <Content />
+            </div>
+        </div>
+    </section>
+</Layout>

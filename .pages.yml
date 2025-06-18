@@ -23,7 +23,7 @@ content:
     label: Specials
     path: src/content/specials.json
     format: json
-    type: file
+    type: collection
     fields:
       - {name: title, label: Title, type: string}
       - {name: description, label: Description, type: string}

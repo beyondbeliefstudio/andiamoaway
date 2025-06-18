@@ -12,7 +12,7 @@ type Props = {
 
 const {special} = Astro.props;
 
-const {title, description, image, href, featured, details, btn_text} = special.data;
+const {title, description, image, slug, isFeatured, details, btn_text} = special.data;
 ---
 
 <div class="specials-card">
@@ -25,7 +25,7 @@ const {title, description, image, href, featured, details, btn_text} = special.d
             <p>{description}</p>
             <p class="h5">{details}</p>
         </div>
-        <Links href={href} variant="secondary">{btn_text}</Links>
+        <Links variant="secondary" href={`/itinerary/${slug}`}>{btn_text}</Links>
     </div>
 </div>
 

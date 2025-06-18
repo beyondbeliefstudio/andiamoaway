@@ -18,17 +18,18 @@ const itinerary = defineCollection({
 });
 
 const specials = defineCollection({
-    loader: file("src/content/specials.json"),
+	loader: glob({pattern: "src/content/specials/**/*.md"}),
     schema: ({image}) => z.object({
         title: z.string().max(65),
+		slug: z.string(),
 		description: z.string().max(160),
 		details: z.string(),
-		featured: z.boolean(),
+		isFeatured: z.boolean(),
 		btn_text: z.string(),
-        href: z.string().url(),
         image: image(),
     }),
 });
+
 
 const reviews = defineCollection({
     loader: file("src/content/reviews.json"),

@@ -65,8 +65,8 @@ main {
 
 /* Typography */
 h1 {
-    // font-size: var(--_typography---font-size--h1);
-    font-size: 5rem;
+    font-size: var(--_typography---font-size--h1);
+    // font-size: 5rem;
     line-height: 1.1;
     font-family: var(--primary-family);
     font-weight: 400;
@@ -295,13 +295,13 @@ section {
         background-color: var(--brand-primary-light);
         border-radius: var(--border-radius);
         padding: var(--_spacing---section-space--small);
-        scale: .8;
+        // scale: .8;
         border: 1px solid var(--brand-secondary);
 
-        animation: fade-in linear forwards;
-        animation-timeline: view();
-        animation-range-start: 0px;
-        animation-range-end: 50vh;
+        // animation: fade-in linear forwards;
+        // animation-timeline: view();
+        // animation-range-start: 0px;
+        // animation-range-end: 50vh;
 
         @container (width < 64em) {
             display: flex;

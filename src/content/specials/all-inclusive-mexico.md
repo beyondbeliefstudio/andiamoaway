@@ -1,16 +1,14 @@
 ---
-title: 'All-Inclusive Mexico – 4th Night Free'
-slug: 'all-inclusive-mexico'
-description: "Book 3 nights at select all-inclusive resorts in Mexico and get the 4th night free + VIP arrival service. Beaches, margaritas, and no extra cost? That's a win."
-details: 'Travel valid through December 2025'
-image: "../../assets/mexico.jpg"
+title: All-Inclusive Mexico – 4th Night Free
+slug: all-inclusive-mexico
+description: Book 3 nights at select all-inclusive resorts in Mexico and get the
+  4th night free + VIP arrival service. Beaches, margaritas, and no extra cost?
+  That's a win.
+details: Travel valid through December 2025
+image: ../../assets/mexico.jpg
 isFeatured: true
-btn_text: 'Learn More'
+btn_text: Learn More
 ---
-
-
----
-
 ## ✈️ Terms & Conditions – All-Inclusive Mexico: 4th Night Free
 
 Offer valid on **new bookings only** at select all-inclusive resorts in Mexico. A **minimum 3-night stay** is required to receive the 4th night free. The complimentary night is applied automatically at time of booking and must be part of the same continuous stay.

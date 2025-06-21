@@ -5,38 +5,38 @@ import type { CollectionEntry } from "astro:content";
 import { Image } from "astro:assets";
 
 type Props = {
-    itinerary: CollectionEntry<"itinerary">
+    specials: CollectionEntry<"specials">
 };
 
-const {itinerary} = Astro.props;
+const {specials} = Astro.props;
 
-const {title, description, duration, heroImage, price, slug, isFeatured} = itinerary.data;
+const {title, description, slug, isFeatured, btn_text, details, image} = specials.data;
 
 ---
 
-<section class="itinerary-hero">
-    <div class="u-container itinerary-hero__container">
-        <div class="content-md itinerary-hero__content">
+<!-- <section class="specials-hero">
+    <div class="u-container specials-hero__container">
+        <div class="content-md specials-hero__content">
             <h1>{title}</h1>
             <h4>
                 {description}
             </h4>
-            <div class="itinerary-hero__details">
+            <div class="specials-hero__details">
                 <h5>Duration: {duration}</h5>
                 <h5>Starting at ${price}</h5>
             </div>
-            <div class="itinerary-hero__img-wrapper">
-                <Image src={heroImage} alt="travel photo" class="itinerary-hero__img" />
+            <div class="specials-hero__img-wrapper">
+                <Image src={heroImage} alt="travel photo" class="specials-hero__img" />
             </div>
         </div>
     </div>
-</section>
+</section> -->
 
 
 
 
 <style lang="scss" >
-.itinerary-hero {
+.specials-hero {
     position: relative;
     border-bottom: 0px;
 

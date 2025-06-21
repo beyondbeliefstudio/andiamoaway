@@ -14,7 +14,7 @@ export const getStaticPaths = (async() => {
     const itinerary = await getCollection("itinerary");    
     return itinerary.map((itinerary) => ({
         params: {
-            page: itinerary.data.slug
+            page: itinerary.data.slug,
         },
         props: {
             itinerary,

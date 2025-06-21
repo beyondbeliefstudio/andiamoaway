@@ -1,0 +1,33 @@
+---
+// Layout
+import ItineraryHero from "@/components/itinerary/ItineraryHero.astro";
+import Layout from "@/layouts/Layout.astro";
+
+// Types
+import { getCollection, render } from "astro:content";
+
+export async function getStaticPaths() {
+    const specials = await getCollection('specials');
+    return specials.map(special => ({
+        params: {special: special.data.slug},
+        props: {special},
+    }));
+}
+
+const {special} = Astro.props;
+const { Content } = await render(special);
+const { title, description, btn_text, details, image, isFeatured, slug } = special.data;
+---
+
+<Layout title={title} description={description}>
+    <!-- <ItineraryHero itinerary={itinerary} /> -->
+    <section class="itinerary-post" aria-label="Itinerary Content">
+        <div class="u-container itinerary-post__container">
+            <div class="content-md itinerary-post__content">
+                <Content />
+            </div>
+        </div>
+    </section>
+</Layout>
+
+

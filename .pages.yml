@@ -29,3 +29,4 @@ content:
     - {name: image, label: Image, type: image}
     - {name: isFeatured, label: Featured, type: boolean, default: true}
     - {name: btn_text, label: Button Label, type: string}
+    - {name: body, label: Body, type: rich-text}

@@ -8,7 +8,7 @@ image: ../../assets/alonso-reyes-haZNHEV2WXQ-unsplash.jpg
 isFeatured: true
 btn_text: View Promotion
 ---
-Sun, sea, and serious Summer savings with Virgin Voyages? Yes, please.
+# Sun, sea, and serious Summer savings with Virgin Voyages? Yes, please.
 
 Score 70% off your second Sailor, free balcony upgrades, and up to $300 onboard credit on 7+ night Caribbean voyages. With 150+ dreamy destinations and award-winning, adults-only ships, this is the vacay glow-up you’ve been waiting for.
 

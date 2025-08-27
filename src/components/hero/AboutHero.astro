@@ -5,6 +5,7 @@ import Links from "../Links.astro";
 // Images
 import { Image } from "astro:assets";
 import heroImage from "@/assets/kathy-about.jpeg";
+import kathyGreece from "@/assets/kathyGreece.jpg";
 import heroImage2 from "@/assets/kathy-about-2.jpeg";
 
 
@@ -15,7 +16,7 @@ import heroImage2 from "@/assets/kathy-about-2.jpeg";
         <div class="hero__layout">
             <div class="column">
                 <div class="contents">
-                    <h1>Meet Kathy, the Travel Queen.</h1>
+                    <h1>Meet Kathy,<br>the Travel Queen.</h1>
                     <p>Lifelong traveler, detail-obsessed planner, and your go-to guide for bucket-list adventures.</p>
                 </div>
                 <div class="button-group">
@@ -24,7 +25,7 @@ import heroImage2 from "@/assets/kathy-about-2.jpeg";
                 </div>
             </div>
             <div class="hero__img-wrapper">
-                <img class="hero__img" src={heroImage.src} alt="Kathy Nervegna">
+                <img class="hero__img" src={kathyGreece.src} alt="Kathy Nervegna">
             </div>
         </div>
 

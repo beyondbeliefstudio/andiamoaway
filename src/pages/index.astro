@@ -11,6 +11,7 @@ import Itinerary from '@/home/Itinerary.astro';
 // Images
 import { Image, Picture } from "astro:assets";
 import kathy from "@/assets/kathy.jpeg";
+import kathyLondon from "@/assets/kathy-london.jpg";
 import family from "@/assets/family.jpeg";
 import testimonial from "@/assets/testimonial.jpeg";
 import FullOverlay from '@/components/FullOverlay.astro';
@@ -30,18 +31,17 @@ import travelVan from '@/assets/travel-van.jpg';
         <div class="split__layout">
             <div class="split__col">
                 <div class="split__img-wrapper">
-                    <Picture src={kathy} alt="kathy" width={700} height={1000}>
+                    <Picture src={kathyLondon} alt="kathy" width={700} height={1000}>
                 </div>
             </div>
             <div class="split__col">
                 <div class="split__content">
                     <p class="eyebrow">Meet Your Travel Designer</p>
                     <h2 class="split__heading">Hi! I'm Kathy Nervegna</h2>
-                    <p> Hi! I’m Kathy Nervegna—lifelong explorer, detail-obsessed planner, and founder of Andiamo Away.</p>
-<p>Travel has been my passion ever since I can remember. From the canals of Venice to the markets of Marrakech, I’ve been lucky enough to experience the world in all its colors, flavors, and stories.
-Now? I want to share that joy with you.</p>
-<p>
-Whether it’s a honeymoon in Santorini, a mother-daughter escape to Paris, or a bucket-list adventure through Southeast Asia, I design journeys with heart, meaning, and magic. If you're ready to stop scrolling and start exploring—I'm your girl.</p>
+                    <p> Hi, I’m Kathy Nervegna — a lifelong explorer, detail-obsessed planner, and founder of Andiamo Away. As a certified travel agent, I specialize in creating seamless, unforgettable travel experiences. From weekend getaways,  luxury escapes to once-in-a-lifetime adventures, I handle every detail so you can focus on what matters most: making memories.</p>
+<p>Travel has been my passion for as long as I can remember. From the mountains of Ushuaia to the sparkling seas of the Mediterranean, I’ve been fortunate to experience the world in all its colors, flavors, and stories. Now, I’m here to share that joy with you.</p>
+<p>Whether you're dreaming of a sun-soaked family getaway to the Caribbean or on a cruise, a romantic escape to Paris, a mother-daughter trip to Amsterdam, or a bucket-list golf experience on the fairways of Scotland — I’m here to make it effortless, personal, and truly unforgettable.
+Let’s make your next journey the one you’ll never forget. Andiamo!</p>
 
                         <Links variant="secondary" href="/about">About Me</Links>
                 </div>
